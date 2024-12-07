@@ -87,7 +87,7 @@ function renderData (users){
                  <td class="main__hcol">
                  
                   <button  data-id = "${user.id}">Изменить</button>
-                  <button data-id = "${user.id}">Удалить</button>
+                  <button class="delete-clint-btn" data-id = "${user.id}">Удалить</button>
                 
                  
                  </td>
@@ -96,4 +96,25 @@ function renderData (users){
 
   })
 
+  document.querySelectorAll(".delete-clint-btn").forEach(button =>{
+    button.addEventListener("click",()=>{
+
+      deleteClient(button.dataset.id)
+
+    })
+  })
+
+}
+
+
+
+function deleteClient(id){
+  console.log(id)
+  if(confirm("Вы уверены?")){  fetch(url+`/api/clients/${id}`, {
+    method: 'DELETE'
+ 
+})
+.then((response) => { return response.json() })
+.then((body) => {console.log(body); getData()})
+  }
 }

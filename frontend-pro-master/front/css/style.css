@@ -53,8 +53,8 @@ body {
 .main__load {
     height: 300px;
     margin-bottom: 40px;
-    background-color: #FFFFFF;
-    background-image: url(../img/load.png);
+    /* background-color: #FFFFFF; */
+    /* background-image: url(../img/load.png); */
     background-position: center;
     background-repeat: no-repeat;
 }
